@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#f4f4f4" />
-  <meta name="description" content="Get a cash offer for your Rivian. Submit VIN, miles, ZIP and mobile number for a fast text back. R1S and R1T are easiest to route." />
+  <meta name="description" content="Get a fast dealer cash offer for your Rivian (R1S / R1T). Send VIN, miles, ZIP, and mobile number — we’ll text you back." />
   <title>ONLY EV — Rivian Cash Offer</title>
 
   <link rel="icon" href="../assets/favicon.png" type="image/png" />
@@ -45,25 +45,7 @@
     header{
       padding: 14px 14px 0 14px;
     }
-    
-    .topbar{
-      padding: 0 14px 14px 14px;
-    }
-    .topbar a{
-      display:block;
-      background:#000;
-      color:#fff;
-      text-decoration:none;
-      padding: 14px 16px;
-      border-radius: var(--radius);
-      font-weight: 900;
-      font-size: 18px;
-      letter-spacing: -0.01em;
-      text-align:center;
-      box-shadow: var(--shadow);
-    }
-    .topbar a:focus{ outline: 3px solid rgba(0,0,0,.25); outline-offset: 2px; }
-.brand{
+    .brand{
       display:flex;
       align-items:center;
       gap:12px;
@@ -132,7 +114,6 @@
       color:#111;
     }
 
-    
     .card{
       background:var(--card);
       border: 1px solid var(--border);
@@ -375,13 +356,45 @@
       text-decoration:none;
       border-bottom: 1px dotted rgba(0,0,0,.35);
     }
+  
+    .banner-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 12px;
+    }
+    .top-banner{
+      display:block;
+      flex: 1 1 260px;
+      padding: 16px 18px;
+      background:#0b0b0b;
+      color:#fff;
+      border-radius: 999px;
+      text-decoration:none;
+      font-weight: 850;
+      letter-spacing: .01em;
+      text-align:center;
+      box-shadow: var(--shadow);
+    }
+    .top-banner:hover{ filter: brightness(1.04); }
+    .top-banner:active{ transform: translateY(1px); }
+    .top-banner:focus{ outline: 3px solid #ffffff; outline-offset: 2px; }
+    .top-banner .arrow{ opacity:.95; padding-left:6px; }
+    .top-banner .small{ display:block; font-size: 13px; font-weight: 650; opacity:.85; margin-top:4px; }
+    .fineprint{
+      margin: 8px 0 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+    select:disabled{ opacity:.65; background: var(--soft); }
+    
   </style>
 </head>
-
-<body>
+<body data-default-brand="Rivian">
 <div class="wrap">
   <header>
-    <div class="brand" aria-label="Only EV">
+    <div class="brand">
       <img src="../assets/logo.png" alt="ONLY EV logo" />
       <div class="brand-name">
         <div class="onlyev">ONLY EV</div>
@@ -390,19 +403,24 @@
     </div>
   </header>
 
-  <div class="topbar" aria-label="Other pages">
-    <a href="../">Have a Lucid Gravity? Get a dealer cash offer →</a>
-  </div>
-
   <main>
     <div class="container">
+
+      <div class="banner-row">
+          <a class="top-banner" href="../">
+            Have a Lucid Gravity? Use the main page<span class="arrow">→</span>
+            <span class="small">Lucid Gravity</span>
+          </a>
+          <a class="top-banner" href="../escalade-iq/">
+            Have an Escalade IQ? Use the Escalade IQ page<span class="arrow">→</span>
+            <span class="small">Cadillac‑estimated 465 miles*</span>
+          </a>
+        </div>
+
       <section class="hero">
         <h1>Get a cash offer for your Rivian.</h1>
-        <p class="sub">
-          Right now we’re focused on <strong>Rivian</strong> (R1S / R1T) based on dealer demand.
-          Send your <strong>VIN</strong> + <strong>miles</strong> + <strong>ZIP</strong> + <strong>mobile #</strong> and I’ll text you back.
-          If you have a <strong>Lucid Gravity</strong>, use the main page for the fastest routing.
-        </p>
+        <p class="sub">Right now we’re focused on <strong>Rivian (R1S / R1T)</strong> based on dealer demand. Send your <strong>VIN + miles + ZIP + mobile #</strong> and I’ll text you back.</p>
+        <p class="fineprint">*Cadillac‑estimated range. Final EPA range may vary.</p>
 
         <div class="pill-row" role="list" aria-label="What we're buying">
           <div class="pill" role="listitem">Buying now: Rivian</div>
@@ -410,17 +428,6 @@
           <div class="pill" role="listitem">Limited slots (one-person shop)</div>
           <div class="pill" role="listitem">Fast text updates</div>
         </div>
-          <div class="pill" role="listitem">Dream Edition / GT priority</div>
-          <div class="pill" role="listitem">Limited slots (one-person shop)</div>
-          <div class="pill" role="listitem">Fast text updates</div>
-        </div>
-          <a class="alt-btn" href="../">Go to the Lucid Gravity page →</a>
-          <div class="alt-mini">Gravity (Dream Edition &amp; GT) is often the fastest route to a dealer cash offer.</div>
-        </div>
-          <a class="alt-btn" href="rivian/">Go to the Rivian page →</a>
-          <div class="alt-mini">Rivian demand changes by week. Using the Rivian page helps me route you faster.</div>
-        </div>
-
       </section>
 
       <section class="card" aria-label="Cash offer form">
@@ -432,12 +439,12 @@
           </p>
         </div>
 
+        
         <form id="offerForm" action="https://formsubmit.co/contact@onlyev.com" method="POST" autocomplete="on" novalidate>
-          <!-- FormSubmit helpers (safe to keep even if you later switch providers) -->
-          <input type="hidden" name="_subject" value="ONLYEV Rivian Cash Offer Lead" />
-          <input type="hidden" name="Lead Page" value="Rivian (onlyev.com/rivian/)" />
+          <input type="hidden" name="_subject" value="ONLYEV Cash Offer Lead" />
           <input type="hidden" name="_captcha" value="false" />
           <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+          <input type="hidden" name="Page" value="onlyev.com/rivian" />
 
           <div class="error" id="errorBox" role="alert"></div>
           <div class="success" id="successBox" role="status"></div>
@@ -464,25 +471,25 @@
             </div>
           </div>
 
-          <div class="field">
-            <label for="vehicle">What are you selling?<span class="req">*</span></label>
-            <select id="vehicle" name="Vehicle" required>
-              <option value="" selected disabled>Select one</option>
-              <optgroup label="Rivian (fastest)">
-                <option>Rivian — R1S</option>
-                <option>Rivian — R1T</option>
-                <option>Rivian — Other / not sure</option>
-              </optgroup>
-              <optgroup label="Lucid Gravity">
-                <option>Lucid Gravity — Dream Edition</option>
-                <option>Lucid Gravity — GT</option>
-                <option>Lucid Gravity — Other / not sure</option>
-              </optgroup>
-              <optgroup label="Other luxury EV">
-                <option>Other luxury EV (I understand ONLY EV may not be able to process it)</option>
-              </optgroup>
-            </select>
-            <div class="helper">Rivian demand changes week to week. R1S and R1T are the easiest to route to dealer buyers.</div>
+          <div class="grid two">
+            <div class="field">
+              <label for="brand">Which EV are you selling?<span class="req">*</span></label>
+              <select id="brand" name="Brand" required>
+                <option value="" selected disabled>Select one</option>
+                <option value="Lucid Gravity">Lucid Gravity</option>
+                <option value="Rivian">Rivian</option>
+                <option value="Cadillac Escalade IQ (2026)">Cadillac Escalade IQ (2026)</option>
+              </select>
+              <div class="helper">Choose the closest match — it helps route you to the right dealer demand.</div>
+            </div>
+
+            <div class="field">
+              <label for="model">Model / trim<span class="req">*</span></label>
+              <select id="model" name="Model/Trim" required disabled>
+                <option value="" selected disabled>Select brand first</option>
+              </select>
+              <div class="helper" id="modelHelper">If you’re not sure, pick “Other / not sure”.</div>
+            </div>
           </div>
 
           <div class="grid three">
@@ -522,12 +529,13 @@
 
           <div class="grid two" id="loanRow" style="display:none;">
             <div class="field">
-              <label for="bank">If there’s a loan, what bank?</label>
+              <label for="bank">If there’s a loan, what bank?<span class="req" id="bankReq" style="display:none">*</span></label>
               <input id="bank" name="Loan Bank" type="text" placeholder="Chase, Wells Fargo, US Bank…" />
+              <div class="helper">If you know the payoff amount, add it in the big notes box below.</div>
             </div>
             <div class="field">
-              <label for="payoff">Estimated payoff (optional)</label>
-              <input id="payoff" name="Estimated Payoff" type="text" inputmode="numeric" placeholder="$0" />
+              <label for="titleNote">Title notes (optional)</label>
+              <input id="titleNote" name="Title Notes" type="text" placeholder="Lien release pending, co-owner, etc." />
             </div>
           </div>
 
@@ -536,33 +544,30 @@
             <textarea
               id="notes"
               name="Notes"
-              placeholder="Example: Color / wheels / options, any damage, where it’s located, timing, extra set of wheels, etc."
+              placeholder="Color / wheels / options, any damage, where it’s located, timing, and (if loan) the payoff amount."
             ></textarea>
             <div class="helper">
               I’m a one‑person shop and I can only process a few at a time — the more complete your info is, the faster I can move.
+              If you prefer email: <a href="mailto:contact@onlyev.com">contact@onlyev.com</a>
             </div>
-          </div>
-
-          <div class="field">
-            <label for="email">Email (optional)</label>
-            <input id="email" name="Email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" />
-            <div class="helper">You can also reach me directly: <a href="mailto:contact@onlyev.com">contact@onlyev.com</a></div>
           </div>
 
           <div class="cta">
             <button id="submitBtn" type="submit">Get my cash offer</button>
             <div class="mini">
-              By submitting, you agree I can contact you by text/call/email about this request. Msg/data rates may apply. Reply STOP to opt out.
+              By submitting, you agree I can text/call you about this request. Msg/data rates may apply. Reply STOP to opt out.
             </div>
           </div>
 
           <div class="divider"></div>
 
           <div class="helper" style="font-size:13px;">
-            <strong>How ONLY EV works:</strong> I source real-time demand from dealers and send you a cash offer when there’s a match.
-            I make a buy fee — and I can only buy what dealers want right now. I can only buy what dealers want right now. For this page, that means <strong>Rivian</strong> (especially R1S / R1T) when dealer buyers are active.
+            <strong>How ONLY EV works:</strong> I match your vehicle to real‑time dealer demand and send you a cash offer when there’s a fit.
+            I make a buy fee — and I can only buy what dealers want right now.
           </div>
         </form>
+    
+
       </section>
     </div>
   </main>
@@ -582,6 +587,7 @@
   </footer>
 </div>
 
+
 <script>
   (function(){
     const form = document.getElementById('offerForm');
@@ -590,11 +596,23 @@
     const miles = document.getElementById('miles');
     const zip = document.getElementById('zip');
     const phone = document.getElementById('phone');
-    const vehicle = document.getElementById('vehicle');
+    const brand = document.getElementById('brand');
+    const model = document.getElementById('model');
+    const modelHelper = document.getElementById('modelHelper');
+    const bank = document.getElementById('bank');
+    const bankReq = document.getElementById('bankReq');
     const errorBox = document.getElementById('errorBox');
     const successBox = document.getElementById('successBox');
     const submitBtn = document.getElementById('submitBtn');
     const loanRow = document.getElementById('loanRow');
+
+    const DEFAULT_BRAND = document.body.getAttribute('data-default-brand') || '';
+
+    const MODELS = {
+      "Lucid Gravity": ["Dream Edition", "GT", "Other / not sure"],
+      "Rivian": ["R1S", "R1T", "Other / not sure"],
+      "Cadillac Escalade IQ (2026)": ["IQ (2026)"]
+    };
 
     function cleanDigits(s){ return (s || '').replace(/\D/g,''); }
 
@@ -613,19 +631,73 @@
 
     function normalizeVIN(){
       let v = (vin.value || '').toUpperCase();
-      v = v.replace(/[^A-Z0-9]/g,'');     // remove spaces/dashes
+      v = v.replace(/[^A-Z0-9]/g,''); // remove spaces/dashes
       v = v.slice(0,17);
       vin.value = v;
       vinCount.textContent = String(v.length);
     }
 
+    function validVIN(v){
+      // VIN excludes I, O, Q. Accept letters A-HJ-NPR-Z and digits.
+      return /^[A-HJ-NPR-Z0-9]{17}$/.test(v);
+    }
+
+    function setModelOptions(brandVal, keepCurrent=false){
+      const opts = MODELS[brandVal] || [];
+      const current = keepCurrent ? model.value : '';
+      model.innerHTML = '';
+      if (!brandVal){
+        model.disabled = true;
+        const o = document.createElement('option');
+        o.value = '';
+        o.textContent = 'Select brand first';
+        o.disabled = true;
+        o.selected = true;
+        model.appendChild(o);
+        modelHelper.textContent = 'Pick a brand first.';
+        return;
+      }
+      model.disabled = false;
+
+      if (opts.length > 1){
+        const placeholder = document.createElement('option');
+        placeholder.value = '';
+        placeholder.textContent = 'Select one';
+        placeholder.disabled = true;
+        placeholder.selected = true;
+        model.appendChild(placeholder);
+      }
+
+      opts.forEach((label) => {
+        const o = document.createElement('option');
+        o.value = label;
+        o.textContent = label;
+        model.appendChild(o);
+      });
+
+      // contextual helper
+      if (brandVal === 'Lucid Gravity'){
+        modelHelper.textContent = 'Dream Edition / GT helps dealers price faster. If you’re not sure, pick “Other / not sure”.';
+      } else if (brandVal === 'Rivian'){
+        modelHelper.textContent = 'Select R1S or R1T (or “Other / not sure”).';
+      } else if (brandVal.indexOf('Escalade IQ') !== -1){
+        modelHelper.textContent = 'All‑electric 2026 Escalade IQ — Cadillac‑estimated 465 miles*.';
+      }
+
+      // restore or auto-select
+      if (current && opts.includes(current)){
+        model.value = current;
+      } else if (opts.length === 1){
+        model.value = opts[0];
+      }
+    }
+
+    // Input behaviors
     vin.addEventListener('input', normalizeVIN);
     normalizeVIN();
 
     miles.addEventListener('input', () => {
-      // allow commas while typing, but keep it mostly digits
       let v = miles.value.replace(/[^0-9,]/g,'');
-      // collapse multiple commas
       v = v.replace(/,{2,}/g, ',');
       miles.value = v;
     });
@@ -635,25 +707,41 @@
     });
 
     phone.addEventListener('input', () => {
-      // lightweight formatting: keep what's typed, but ensure digits exist
-      const d = cleanDigits(phone.value).slice(0,15);
-      phone.value = phone.value; // no forced formatting; just let users paste
+      phone.value = phone.value; // allow paste, no forced formatting
     });
 
-    // Show loan fields if "Loan" selected
-    form.addEventListener('change', (e) => {
-      if (e.target && e.target.name === 'Title/Loan'){
-        loanRow.style.display = (e.target.value === 'Loan') ? 'grid' : 'none';
+    // Brand/model logic
+    brand.addEventListener('change', () => {
+      setModelOptions(brand.value);
+      if (MODELS[brand.value] && MODELS[brand.value].length > 1) {
+        model.value = '';
       }
     });
 
-    function validVIN(v){
-      // VIN excludes I, O, Q. Accept letters A-HJ-NPR-Z and digits.
-      return /^[A-HJ-NPR-Z0-9]{17}$/.test(v);
+    // Initialize default brand per page (if provided)
+    if (DEFAULT_BRAND) {
+      const values = Array.from(brand.options).map(o => o.value);
+      if (values.includes(DEFAULT_BRAND)) {
+        brand.value = DEFAULT_BRAND;
+        setModelOptions(DEFAULT_BRAND);
+      }
     }
 
+    // Loan conditional fields
+    form.addEventListener('change', (e) => {
+      if (e.target && e.target.name === 'Title/Loan') {
+        const isLoan = (e.target.value === 'Loan');
+        loanRow.style.display = isLoan ? 'grid' : 'none';
+        bankReq.style.display = isLoan ? 'inline' : 'none';
+        bank.required = isLoan;
+        if (!isLoan) {
+          bank.value = '';
+        }
+      }
+    });
+
     form.addEventListener('submit', async (e) => {
-      try{
+      try {
         normalizeVIN();
 
         const vinVal = vin.value.trim();
@@ -661,20 +749,19 @@
         const zipDigits = cleanDigits(zip.value);
         const phoneDigits = cleanDigits(phone.value);
 
-        // Client-side validation (fast & friendly)
         if (!vinVal) return setError('Please enter your VIN (17 characters).');
         if (!validVIN(vinVal)) return setError('That VIN doesn’t look right. It should be 17 characters (letters/numbers) and should not include I, O, or Q.');
-        if (!vehicle.value) return setError('Please select what you’re selling (Lucid Gravity Dream Edition / GT).');
+        if (!brand.value) return setError('Please select which EV you’re selling.');
+        if (!model.value) return setError('Please select the model / trim.');
         if (!milesDigits) return setError('Please enter your current odometer miles.');
         if (milesDigits.length > 7) return setError('Miles looks too long — please double-check the odometer.');
         if (!zipDigits || zipDigits.length < 5) return setError('Please enter a valid ZIP code.');
         if (!phoneDigits || phoneDigits.length < 10) return setError('Please enter a valid mobile number so I can text you.');
-
-        // Require a loan/title selection
         const titleLoan = form.querySelector('input[name="Title/Loan"]:checked');
         if (!titleLoan) return setError('Please select whether you have the title on hand or a loan.');
+        if (titleLoan.value === 'Loan' && !bank.value.trim()) return setError('If there’s a loan, please tell me which bank holds it.');
 
-        // If JS is on, submit via AJAX so the user stays on the page
+        // Submit via AJAX so the user stays on the page
         e.preventDefault();
 
         errorBox.style.display = 'none';
@@ -682,9 +769,8 @@
         submitBtn.disabled = true;
         submitBtn.textContent = 'Sending…';
 
-        // Add a compact summary field to the email
         const fd = new FormData(form);
-        fd.append('Summary', `VIN ${vinVal} | ${milesDigits} miles | ZIP ${zipDigits} | Mobile ${phoneDigits}`);
+        fd.append('Summary', `VIN ${vinVal} | ${brand.value} ${model.value} | ${milesDigits} miles | ZIP ${zipDigits} | Mobile ${phoneDigits}`);
 
         const ajaxEndpoint = 'https://formsubmit.co/ajax/contact@onlyev.com';
         const res = await fetch(ajaxEndpoint, {
@@ -693,8 +779,7 @@
           headers: { 'Accept': 'application/json' }
         });
 
-        if (!res.ok){
-          // fall back to normal submit
+        if (!res.ok) {
           form.submit();
           return;
         }
@@ -703,15 +788,29 @@
         form.reset();
         normalizeVIN();
         loanRow.style.display = 'none';
-      }catch(err){
-        // fall back to normal submit if fetch fails
-        try{ form.submit(); }catch(_e){}
-      }finally{
+        bank.required = false;
+        bankReq.style.display = 'none';
+
+        // Re-apply default brand
+        if (DEFAULT_BRAND) {
+          brand.value = DEFAULT_BRAND;
+          setModelOptions(DEFAULT_BRAND);
+        } else {
+          setModelOptions('');
+        }
+      } catch (err) {
+        try { form.submit(); } catch (_e) {}
+      } finally {
         submitBtn.disabled = false;
         submitBtn.textContent = 'Get my cash offer';
       }
     });
+
+    if (!DEFAULT_BRAND) {
+      setModelOptions('');
+    }
   })();
 </script>
+
 </body>
 </html>

@@ -1,24 +1,25 @@
 # ONLYEV.com — Cash Offer Lander (GitHub Pages)
 
-This folder is ready to upload to GitHub and publish with GitHub Pages.
+Mobile-first landing pages for **ONLY EV**.
 
-## What it does
-- Mobile-first landing page
-- Big VIN input (17 chars) + required fields: miles, ZIP, mobile #
-- Loan/title selection (+ bank if loan)
-- Submits to `contact@onlyev.com` using FormSubmit (static-site friendly)
+## Pages
+- `/` — main intake (defaults to **Lucid Gravity**)
+- `/rivian/` — Rivian page (defaults to **Rivian**)
+- `/escalade-iq/` — Escalade IQ page (defaults to **Cadillac Escalade IQ (2026)**)
 
-## Files
-- `index.html` — landing page
-- `thanks.html` — optional thank you page (not required)
-- `assets/logo.png` — provided logo
-- `assets/favicon.png` — favicon
+All pages use the same form and send submissions to **contact@onlyev.com** via FormSubmit.
 
-## Notes
-Form submission uses FormSubmit:
-- Action (fallback): https://formsubmit.co/contact@onlyev.com
-- AJAX endpoint (preferred): https://formsubmit.co/ajax/contact@onlyev.com
+## What the form collects (required)
+- VIN (17 chars)
+- Brand + model/trim
+- Odometer miles
+- ZIP
+- Mobile number (for texting)
+- Loan vs title (bank required if loan)
+- Notes (big box)
 
-On first real submission, FormSubmit may email you a confirmation link to activate delivery.
+## Custom domain
+This folder includes a `CNAME` file for **onlyev.com**.
 
-When you're ready, we can also switch this to a different form provider (Formspree, Basin, etc.).
+## Deploy
+Upload/commit these files to your GitHub Pages repo root and ensure Pages is enabled for the `main` branch.
